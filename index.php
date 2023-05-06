@@ -1,8 +1,11 @@
-<?php
-include 'functions.php';
+<?php session_start();
+include  'functions.php';
+$password = '';
 if (isset($_GET['length'])) {
     $length = $_GET['length'];
     $password = random_psw($length);
+
+    
     // $characters ='abcdefghilmnopqrstuvzABCD1234567890&%$£§ç@';
     // $password ='';
     // for ($i = 0; $i <$length; $i++){
@@ -10,11 +13,16 @@ if (isset($_GET['length'])) {
     // }
     // echo "your password is: $password";
 
-  
 }
 
-?>
+if(!empty($password)){
+    $_SESSION['password']= $password;
+    header("Location: result.php"); 
+    exit();
 
+};
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
