@@ -9,6 +9,8 @@ if (isset($_GET['length'])) {
     //     $password .=$characters[random_int(0, strlen($characters) - 1)];
     // }
     // echo "your password is: $password";
+
+  
 }
 
 ?>
@@ -39,9 +41,9 @@ if (isset($_GET['length'])) {
             <button type="submit">Create password</button>
         </form>
 
-        <p class mt-4>La tua password e' <?php echo $password ?></p>
-
-
+        <?php if ($password) { ?>
+            <p class="mt-4"> la password e' <?php echo $password; ?> </p>
+        <?php } ?>
 
 
 
